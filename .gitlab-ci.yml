@@ -26,6 +26,8 @@ build:
     - gradle clean build
 
 release:
+  only:
+    - master
   image: gradle:6.5
   stage: release
   script:
