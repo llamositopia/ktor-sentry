@@ -182,13 +182,13 @@ class KtorSentry(config: Configuration) {
 
         // store in call attributes
         attributes.put(ktorSentryContextAttributeKey, context)
-        logger.debug("Created KtorSentryContext ${callIdLogText()}")
+        logger.trace("Created KtorSentryContext ${callIdLogText()}")
     }
 
     private fun destroyContext(call: ApplicationCall) = call.apply {
         // remove from call attributes, no destruction needed
         attributes.remove(ktorSentryContextAttributeKey)
-        logger.debug("Destroyed KtorSentryContext ${callIdLogText()}")
+        logger.trace("Destroyed KtorSentryContext ${callIdLogText()}")
     }
 
     internal fun getContext(call: ApplicationCall): KtorSentryContext {
