@@ -1,0 +1,26 @@
+include:
+  - template: SAST.gitlab-ci.yml
+  - template: Dependency-Scanning.gitlab-ci.yml
+
+stages:
+  - build
+  - release
+
+build:
+  image: gradle:6.5
+  stage: build
+  artifacts:
+    paths:
+      - build/
+    expose_as: Build Files
+    name: Build Files
+    when: on_success
+    expire_in: 30 days
+  script:
+    - gradle clean build
+
+release:
+  image: gradle:6.5
+  stage: release
+  script:
+    - gradle publish
