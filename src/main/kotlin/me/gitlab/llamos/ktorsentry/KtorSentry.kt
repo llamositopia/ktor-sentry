@@ -181,7 +181,7 @@ class KtorSentry(config: Configuration) {
             context.addExtra("KtorRequestPath", request.path())
 
         // store in call attributes
-        attributes.put(ktorSentryContextAttributeKey, KtorSentryContext(this))
+        attributes.put(ktorSentryContextAttributeKey, context)
         logger.debug("Created KtorSentryContext ${callIdLogText()}")
     }
 
