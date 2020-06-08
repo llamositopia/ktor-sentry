@@ -7,8 +7,13 @@ Installation
 KtorSentry is hosted within the Maven repository of this GitLab project.
 You can add it to your project via the following settings for gradle,
 or the equivalent options in your build tool of choice:
-```
-
+```gradle
+repositories {
+    maven { url "https://gitlab.com/api/v4/projects/19245109/packages/maven" }
+}
+dependencies {
+    implementation "me.gitlab.llamos:ktor-sentry:1.0.0"
+}
 ```
 
 Usage
