@@ -7,16 +7,17 @@ stages:
   - test
   - release
 
+before_script:
+  - export GRADLE_USER_HOME=`pwd`/.gradle
+
+cache:
+  paths:
+    - .gradle/wrapper
+    - .gradle/caches
+
 build:
   image: gradle:6.5
   stage: build
-  artifacts:
-    paths:
-      - build/
-    expose_as: Build Files
-    name: Build Files
-    when: on_success
-    expire_in: 30 days
   script:
     - gradle clean build
 
