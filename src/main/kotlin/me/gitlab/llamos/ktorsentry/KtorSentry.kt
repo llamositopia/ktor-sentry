@@ -90,7 +90,7 @@ class KtorSentry(config: Configuration) {
 
         // other options could go here
         val params = configMap.toList().formUrlEncode()
-        println(params)
+        logger.debug("Created DSN parameters: $params")
 
         // create context-sensitive client
         val factory = KtorSentryClientFactory(this)
