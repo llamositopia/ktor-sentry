@@ -12,7 +12,7 @@ repositories {
     maven { url "https://gitlab.com/api/v4/projects/19245109/packages/maven" }
 }
 dependencies {
-    implementation "me.gitlab.llamos:ktor-sentry:1.0.0"
+    implementation "me.gitlab.llamos:ktor-sentry:1.0.2"
 }
 ```
 
